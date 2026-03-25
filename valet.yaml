@@ -14,3 +14,8 @@ connectors:
     description: "Parallel search for querying AI news sources and fetching article content"
     slot_descriptions:
       PARALLEL_API_KEY: "Parallel API key from parallel.ai"
+
+channels:
+  - type: cron
+    schedule: "every day at 8am"
+    description: "Triggers the daily AI news research and briefing at 8am"
