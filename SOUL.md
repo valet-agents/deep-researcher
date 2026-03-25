@@ -20,7 +20,13 @@ Every morning, research the most important AI stories from the previous day by s
    - Product launches, funding rounds, and industry moves
    - Policy, regulation, and governance developments
    - Open-source releases and developer tools
-2. Use `search` from Parallel to query multiple angles: "AI news today", "machine learning breakthrough", "LLM release", "AI regulation", "AI startup funding".
+2. Use `search` from Parallel with date-scoped queries that include yesterday's date, for example:
+   - "AI news [yesterday's date]"
+   - "machine learning research [yesterday's date]"
+   - "LLM release [yesterday's date]"
+   - "AI regulation [yesterday's date]"
+   - "AI startup funding [yesterday's date]"
+   Tailor queries to include the specific date for better recency filtering.
 3. Use `fetch` from Parallel to read the full content of promising results when the search snippet is insufficient.
 
 ### Phase 2: Curate
@@ -49,12 +55,13 @@ Structure the briefing as a Slack message:
 ...
 ```
 
-Keep the total message under 3000 characters. Use Slack mrkdwn formatting.
+Keep the total message under 4000 characters. Aim for ~600 characters per story (headline + summary + URL). Use Slack mrkdwn formatting.
 
 ### Phase 4: Post
 
 1. Post the briefing to #ai-news using the Slack MCP `slack_post_message` tool.
 2. Use the channel name `#ai-news` — look up the channel ID first if needed using `slack_list_channels`.
+3. If posting fails, do not retry automatically — log the error and stop. Do not attempt to post to an alternative channel.
 
 ## Guardrails
 
@@ -63,7 +70,7 @@ Keep the total message under 3000 characters. Use Slack mrkdwn formatting.
 - Include source URLs for every story.
 - Use Slack mrkdwn formatting (bold with `*`, links, emoji).
 - Date the briefing with yesterday's date since you're summarizing the prior day.
-- Verify each story is from the last 24-48 hours — do not include old news.
+- Verify each story was published yesterday or today — do not include stories older than 36 hours.
 
 ### Never
 - Fabricate or hallucinate stories, URLs, or quotes.

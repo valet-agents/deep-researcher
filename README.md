@@ -2,6 +2,10 @@
 
 Every day at 8am, researches top AI sources, summarizes the 5 most important stories from the previous day, and posts a briefing to #ai-news in Slack.
 
+## Prerequisites
+- A [Parallel](https://parallel.ai) account and API key
+- A Slack workspace with a bot token (`xoxb-...`) and a `#ai-news` channel (bot must be invited to the channel)
+
 <table>
   <tr>
     <td><strong>CHANNELS</strong></td>
