@@ -1,0 +1,16 @@
+name: deep-researcher
+display_name: Deep Researcher
+description: "Every day at 8am, researches top AI sources, summarizes the 5 most important stories from the previous day, and posts a briefing to #ai-news in Slack."
+category: research
+
+connectors:
+  - catalog: slack-mcp
+    description: "Slack MCP server for posting the daily AI briefing to #ai-news"
+    slot_descriptions:
+      SLACK_BOT_TOKEN: "Slack bot token (xoxb-...) with chat:write and channels:read scopes. Bot must be invited to #ai-news before deploying."
+      SLACK_TEAM_ID: "Slack workspace team ID (starts with T)"
+
+  - catalog: parallel-search-mcp
+    description: "Parallel search for querying AI news sources and fetching article content"
+    slot_descriptions:
+      PARALLEL_API_KEY: "Parallel API key from parallel.ai"
