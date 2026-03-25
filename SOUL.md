@@ -55,7 +55,7 @@ Structure the briefing as a Slack message:
 ...
 ```
 
-Keep the total message under 4000 characters. Aim for ~600 characters per story (headline + summary + URL). Use Slack mrkdwn formatting.
+Keep the total message under 3000 characters. Use Slack mrkdwn formatting.
 
 ### Phase 4: Post
 
