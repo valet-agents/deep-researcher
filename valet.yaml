@@ -17,5 +17,5 @@ connectors:
 
 channels:
   - type: cron
-    schedule: "0 8 * * *"
+    cron: "0 8 * * *"
     description: "Triggers the daily AI news research and briefing at 8am"
