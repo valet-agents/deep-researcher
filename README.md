@@ -1,6 +1,6 @@
 # Deep Researcher
 
-Every day at 8am, researches top AI sources, summarizes the 5 most important stories from the previous day, and posts a briefing to #ai-news in Slack.
+A [Valet](https://valet.dev) agent that delivers a daily AI briefing. Every day at 8am, researches top AI sources, summarizes the 5 most important stories from the previous day, and posts a briefing to #ai-news in Slack.
 
 ## Prerequisites
 - A [Parallel](https://parallel.ai) account and API key
