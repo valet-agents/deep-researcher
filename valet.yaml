@@ -2,16 +2,45 @@ name: deep-researcher
 display_name: Deep Researcher
 description: "Every day at 8am, researches top AI sources, summarizes the 5 most important stories from the previous day, and posts a briefing to #ai-news in Slack."
 category: research
+author: Valet
+
+story:
+  hero: "A daily AI news briefing — delivered to Slack at 8am."
+  subheadline: "Every morning, Deep Researcher scans the AI news landscape, summarizes the 5 most important stories, and posts the briefing to #ai-news."
+  steps:
+    - role: trigger
+      title: "8am hits."
+      body: "A daily cron wakes the agent — Monday through Sunday, no matter what."
+    - role: action
+      title: "Deep Researcher scans the news."
+      body: "Queries Parallel for the latest stories, clusters by topic, picks the 5 most important angles."
+      catalog: parallel-search-mcp
+    - role: outcome
+      title: "Drops the briefing in #ai-news."
+      body: "Posts a clean summary with sources — ready to skim over your first coffee."
+      catalog: slack
 
 connectors:
   - catalog: parallel-search-mcp
     description: "Parallel search for querying AI news sources and fetching article content"
     slot_descriptions:
       PARALLEL_API_KEY: "Parallel API key from parallel.ai"
+    ui:
+      headline: "Hook up Deep Researcher's source of truth."
+      blurb: "Parallel powers the news scan. One API key unlocks the same feed the briefing draws from."
+      done_note: "Connected to Parallel"
 
 channels:
   - catalog: slack
     description: "Slack workspace connection for posting the daily AI briefing to #ai-news"
+    ui:
+      headline: "Let Deep Researcher post to #ai-news."
+      blurb: "Posts the daily briefing to the channel you pick — no DMs, no surprise channels."
+      done_note: "Ready to post in #ai-news"
   - type: cron
     cron: "0 8 * * *"
     description: "Triggers the daily AI news research and briefing at 8am"
+    ui:
+      headline: "Schedule the morning briefing."
+      blurb: "A daily 8am cron kicks off the news scan. Adjust the time later by redeploying."
+      done_note: "Running every day at 8am"
