@@ -18,7 +18,7 @@ A [Valet](https://valet.dev) agent that delivers a daily AI briefing. Every day 
   <tr>
     <td colspan="2" align="center">
       <br />
-      <a href="https://dashboard.valet.dev/setup/configure?from=github.com/valet-agents/deep-researcher">
+      <a href="https://dashboard.valet.dev/deploy?from=github.com/valet-agents/deep-researcher">
         <img src="https://raw.githubusercontent.com/valet-agents/deep-researcher/main/.github/deploy-button.svg" alt="Deploy Agent →" height="40" />
       </a>
       <br /><br />
