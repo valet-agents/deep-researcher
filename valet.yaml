@@ -4,6 +4,9 @@ description: "Every day at 8am, researches top AI sources, summarizes the 5 most
 category: research
 author: Valet
 
+example:
+  prompt: "What's the most important AI story today?"
+
 story:
   hero: "A daily AI news briefing — delivered to Slack at 8am."
   subheadline: "Every morning, Deep Researcher scans the AI news landscape, summarizes the 5 most important stories, and posts the briefing to #ai-news."
